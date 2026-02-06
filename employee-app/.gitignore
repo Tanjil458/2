@@ -1,0 +1,36 @@
+# Ignore node_modules if using any npm packages
+node_modules/
+
+# Ignore build artifacts
+dist/
+build/
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Ignore logs
+*.log
+npm-debug.log*
+
+# Ignore temporary files
+tmp/
+temp/
+
+# DO NOT commit actual Firebase credentials
+# The files in the repo have placeholder values
+# Replace with your actual credentials locally
+
+# Ignore sensitive credentials file if it contains real data
+# credentials-production.html
+
+# Ignore local configuration
+.env
+.env.local
