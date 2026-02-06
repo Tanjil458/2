@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MimiPro - Employee Portal</title>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+</head>
+<body>
+    <!-- Top App Bar -->
+    <header class="app-bar">
+        <button class="menu-btn" id="menuBtn">
+            <span class="menu-icon"></span>
+        </button>
+        <h1 class="app-title" id="pageTitle">Dashboard</h1>
+        <button class="sync-btn" id="syncBtn" title="Sync Data">
+            <span class="sync-icon">↻</span>
+        </button>
+    </header>
+    
+    <!-- Side Drawer -->
+    <nav class="drawer" id="drawer">
+        <div class="drawer-header">
+            <h2>MimiPro</h2>
+            <p id="employeeName">Employee Portal</p>
+        </div>
+        <ul class="drawer-menu">
+            <li><a href="#dashboard" class="drawer-item active" data-page="Dashboard">
+                <span class="icon">📊</span> Dashboard
+            </a></li>
+            <li><a href="#attendance" class="drawer-item" data-page="Attendance">
+                <span class="icon">📅</span> Attendance
+            </a></li>
+            <li><a href="#advances" class="drawer-item" data-page="Advances">
+                <span class="icon">💰</span> Advances
+            </a></li>
+            <li><a href="#profile" class="drawer-item" data-page="Profile">
+                <span class="icon">👤</span> Profile
+            </a></li>
+        </ul>
+    </nav>
+    
+    <!-- Drawer Overlay -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    
+    <!-- Main Content -->
+    <main class="main-content" id="pageContent">
+        <!-- Page content will be injected here -->
+    </main>
+    
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="#dashboard" class="nav-item active" data-page="Dashboard">
+            <span class="icon">📊</span>
+            <span class="label">Dashboard</span>
+        </a>
+        <a href="#attendance" class="nav-item" data-page="Attendance">
+            <span class="icon">📅</span>
+            <span class="label">Attendance</span>
+        </a>
+        <a href="#advances" class="nav-item" data-page="Advances">
+            <span class="icon">💰</span>
+            <span class="label">Advances</span>
+        </a>
+        <a href="#profile" class="nav-item" data-page="Profile">
+            <span class="icon">👤</span>
+            <span class="label">Profile</span>
+        </a>
+    </nav>
+    
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+    
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+    
+    <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

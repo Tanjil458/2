@@ -1,0 +1,579 @@
+/**
+ * Layout styles - App structure and navigation
+ */
+
+/* App Bar */
+.app-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    box-shadow: var(--shadow);
+    z-index: 100;
+}
+
+.menu-btn {
+    background: none;
+    color: white;
+    padding: 0.5rem;
+    margin-right: 1rem;
+}
+
+.menu-icon {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: white;
+    position: relative;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: white;
+    position: absolute;
+}
+
+.menu-icon::before {
+    top: -8px;
+}
+
+.menu-icon::after {
+    top: 8px;
+}
+
+.app-title {
+    flex: 1;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.sync-btn {
+    background: none;
+    color: white;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.sync-icon {
+    display: inline-block;
+}
+
+/* Drawer */
+.drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    background: var(--card-bg);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 200;
+    box-shadow: var(--shadow-lg);
+    overflow-y: auto;
+}
+
+.drawer.open {
+    transform: translateX(0);
+}
+
+.drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 199;
+}
+
+.drawer-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.drawer-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 2rem 1rem 1.5rem;
+}
+
+.drawer-header h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.drawer-header p {
+    font-size: 0.9rem;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.drawer-menu {
+    list-style: none;
+    padding: 0.5rem 0;
+}
+
+.drawer-menu li {
+    margin: 0;
+}
+
+.drawer-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.drawer-item:hover {
+    background: var(--bg-color);
+    text-decoration: none;
+}
+
+.drawer-item.active {
+    background: var(--primary-light);
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.drawer-item .icon {
+    margin-right: 1rem;
+    font-size: 1.25rem;
+}
+
+/* Main Content */
+.main-content {
+    margin-top: 56px;
+    margin-bottom: 60px;
+    padding: 1rem;
+    min-height: calc(100vh - 116px);
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: var(--card-bg);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 100%;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.nav-item:hover {
+    text-decoration: none;
+}
+
+.nav-item.active {
+    color: var(--primary-color);
+}
+
+.nav-item .icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.nav-item .label {
+    font-size: 0.75rem;
+}
+
+/* Page Specific Styles */
+.dashboard-page,
+.attendance-page,
+.advances-page,
+.profile-page {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Dashboard */
+.sync-info {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+/* Attendance Calendar */
+.calendar-container {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.nav-btn {
+    background: var(--bg-color);
+    color: var(--text-primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.nav-btn:hover {
+    background: var(--border-color);
+}
+
+.month-year {
+    text-align: center;
+    flex: 1;
+}
+
+.month-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.month-summary {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+}
+
+.calendar-day-header {
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    padding: 0.5rem 0;
+}
+
+.calendar-cell {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    position: relative;
+    background: var(--bg-color);
+    transition: all 0.2s;
+}
+
+.calendar-cell.empty {
+    background: transparent;
+}
+
+.calendar-cell.present {
+    background: var(--primary-light);
+    color: var(--primary-color);
+}
+
+.calendar-cell.today {
+    border: 2px solid var(--primary-color);
+}
+
+.day-number {
+    font-weight: 500;
+}
+
+.day-indicator {
+    font-size: 1.25rem;
+    margin-top: 0.25rem;
+}
+
+/* Attendance List */
+.attendance-list {
+    background: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.attendance-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.attendance-item:last-child {
+    border-bottom: none;
+}
+
+.attendance-date {
+    flex-shrink: 0;
+}
+
+.day-name {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.date-str {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.attendance-times {
+    display: flex;
+    gap: 1rem;
+}
+
+.time-entry {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.time-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.time-value {
+    font-weight: 500;
+}
+
+/* Advances */
+.totals-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.total-card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.total-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.total-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.advances-list {
+    background: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.advance-item {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.advance-item:last-child {
+    border-bottom: none;
+}
+
+.advance-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.advance-amount {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.advance-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.advance-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.advance-date,
+.advance-reason,
+.advance-notes,
+.advance-paid-date {
+    font-size: 0.875rem;
+}
+
+.detail-label {
+    color: var(--text-secondary);
+    margin-right: 0.5rem;
+}
+
+.detail-value {
+    color: var(--text-primary);
+}
+
+/* Profile */
+.profile-header {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 600;
+    margin: 0 auto 1rem;
+}
+
+.profile-name {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.profile-id {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.profile-status {
+    display: inline-block;
+    padding: 0.25rem 1rem;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.status-active {
+    background: var(--primary-light);
+    color: var(--success-color);
+}
+
+.status-inactive {
+    background: #FFEBEE;
+    color: var(--error-color);
+}
+
+.info-list {
+    background: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    color: var(--text-secondary);
+}
+
+.info-value {
+    font-weight: 500;
+    text-align: right;
+}
+
+.btn-logout {
+    width: 100%;
+    background: var(--error-color);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background 0.2s;
+}
+
+.btn-logout:hover {
+    background: #D32F2F;
+}
+
+.btn-icon {
+    font-size: 1.25rem;
+}
+
+.profile-footer {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .calendar-grid {
+        gap: 0.25rem;
+    }
+    
+    .day-indicator {
+        font-size: 1rem;
+    }
+}
